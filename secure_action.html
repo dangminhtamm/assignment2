@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Bank</title>
+        <link rel="stylesheet" href="{{ url_for('templates', filename='action.css') }}">
+</head>
+<body>
+    <h1>Welcome to your bank</h1>
+    <form action="/transfer" method="POST">
+        <label>Amount to transfer:</label>
+        <input type="text" name="amount" />
+        <input type="submit" value="Transfer" />
+    </form>
+</body>
+</html>

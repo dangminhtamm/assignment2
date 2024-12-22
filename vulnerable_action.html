@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Action</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Perform a sensitive action (Secure)</h1>
+    <form action="/secure_action" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password" placeholder="New Password" required><br><br>
+
+        <!-- CSRF Token hidden input -->
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+

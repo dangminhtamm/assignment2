@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Comments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Secure Comments</h1>
+    <form method="POST" action="/secure_comment">
+        <label for="comment">Enter your comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in comments %}
+        <li>{{ comment[0] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

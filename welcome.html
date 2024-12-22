@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Demo - Security Demonstration</title>
+</head>
+<body>
+    <h1>Welcome to the XSS Demo Page</h1>
+
+    <h2>Submit a Comment:</h2>
+    <form method="post" action="/xss">
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment[0] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
